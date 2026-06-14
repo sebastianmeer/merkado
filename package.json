@@ -2,14 +2,18 @@
     "name": "marketplace",
     "version": "1.0.0",
     "description": "A Local Marketplace API for community trading - buy, sell, and browse items in your neighborhood.",
-    "main": "server.js",
+    "main": "server.ts",
+    "type": "module",
     "scripts": {
-        "start": "node server.js",
-        "start:dev": "nodemon server.js",
+        "prestart": "tsx scripts/ensure-client-build.ts",
+        "start": "tsx server.ts",
+        "start:dev": "tsx watch server.ts",
+        "build": "tsx scripts/ensure-client-build.ts && tsc -p tsconfig.json --noEmit",
+        "typecheck": "tsc -p tsconfig.json --noEmit",
         "client:dev": "npm --prefix client run dev",
         "client:build": "npm --prefix client run build",
-        "data:import": "node import-dev-data.js --import",
-        "data:delete": "node import-dev-data.js --delete"
+        "data:import": "tsx import-dev-data.ts --import",
+        "data:delete": "tsx import-dev-data.ts --delete"
     },
     "keywords": [
         "marketplace",
@@ -36,7 +40,16 @@
         "xss-clean": "^0.1.4"
     },
     "devDependencies": {
+        "@types/bcryptjs": "^2.4.6",
+        "@types/cookie-parser": "^1.4.10",
+        "@types/express": "^5.0.6",
+        "@types/jsonwebtoken": "^9.0.10",
+        "@types/morgan": "^1.9.10",
+        "@types/node": "^25.9.3",
+        "@types/validator": "^13.15.10",
         "morgan": "^1.10.1",
-        "nodemon": "^3.1.14"
+        "nodemon": "^3.1.14",
+        "tsx": "^4.22.4",
+        "typescript": "^6.0.3"
     }
 }
