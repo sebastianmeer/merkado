@@ -34,8 +34,10 @@ export function ProfilePage() {
 
           <div className="profile-stack" aria-hidden="true">
             <div className="profile-banner">
-              <Skeleton className="avatar-skeleton avatar-skeleton-xl" />
-              <div>
+              <div className="profile-avatar-wrapper">
+                <Skeleton className="avatar-skeleton avatar-skeleton-xl" />
+              </div>
+              <div className="profile-banner-info">
                 <Skeleton className="line line-lg" />
                 <Skeleton className="line" />
               </div>
@@ -63,7 +65,7 @@ export function ProfilePage() {
           </div>
 
           <div className="danger-note">
-            <div>
+            <div className="danger-note-content">
               <h4>Delete account</h4>
               <p>Space reserved for the destructive confirmation flow.</p>
             </div>

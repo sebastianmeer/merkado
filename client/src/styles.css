@@ -803,10 +803,24 @@ img {
   background: var(--color-bg);
 }
 
+.profile-avatar-wrapper {
+  flex-shrink: 0;
+}
+
+.profile-banner-info {
+  flex: 1;
+  display: grid;
+  gap: var(--space-2);
+}
+
 .danger-note {
   margin-top: var(--space-4);
   border: 1px solid var(--color-danger-soft);
   background: #FFF5F5;
+}
+
+.danger-note-content {
+  flex: 1;
 }
 
 .danger-note h4 {
