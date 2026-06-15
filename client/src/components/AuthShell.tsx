@@ -14,9 +14,15 @@ export function AuthShell({ eyebrow, title, description, children }: AuthShellPr
   return (
     <main className="auth-shell">
       <section className="auth-hero">
-        <p className="eyebrow">{eyebrow}</p>
-        <h1>{title}</h1>
-        <p className="auth-summary">{description}</p>
+        <div className="auth-hero-header">
+          <div className="auth-brand">
+            <div className="brand-mark" aria-hidden="true">M</div>
+            <span className="auth-brand-name">Marketplace</span>
+          </div>
+          <p className="eyebrow">{eyebrow}</p>
+          <h1>{title}</h1>
+          <p className="auth-summary">{description}</p>
+        </div>
 
         <div className="auth-highlights" aria-hidden="true">
           <article className="mini-surface">

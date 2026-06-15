@@ -11,8 +11,8 @@ export function SignupPage() {
     >
       <div className="auth-form-shell" aria-hidden="true">
         <div className="auth-form-head">
-          <Skeleton className="line line-lg" />
-          <Skeleton className="line" />
+          <h2 className="auth-form-title">Create your account</h2>
+          <p className="auth-form-subtitle">Fill in the details below to get started</p>
         </div>
         <label className="field">
           <span>Name</span>

@@ -868,6 +868,25 @@ img {
   color: var(--color-text);
 }
 
+.auth-hero-header {
+  display: grid;
+  gap: var(--space-4);
+}
+
+.auth-brand {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  margin-bottom: var(--space-4);
+}
+
+.auth-brand-name {
+  font-family: var(--font-heading);
+  font-size: var(--text-base);
+  font-weight: 800;
+  color: var(--color-text);
+}
+
 .auth-summary {
   max-width: 56ch;
   margin: 0;
@@ -921,6 +940,21 @@ img {
 .auth-form-head {
   display: grid;
   gap: var(--space-2);
+}
+
+.auth-form-title {
+  margin: 0;
+  font-family: var(--font-heading);
+  font-size: var(--text-xl);
+  font-weight: 800;
+  color: var(--color-text);
+}
+
+.auth-form-subtitle {
+  margin: 0;
+  font-size: var(--text-sm);
+  color: var(--color-text-muted);
+  line-height: 1.5;
 }
 
 /* ----- Skeleton Elements ----- */

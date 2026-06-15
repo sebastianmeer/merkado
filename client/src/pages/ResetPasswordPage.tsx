@@ -12,8 +12,8 @@ export function ResetPasswordPage() {
       <div className="reset-grid" aria-hidden="true">
         <section className="auth-form-shell">
           <div className="auth-form-head">
-            <Skeleton className="line line-lg" />
-            <Skeleton className="line" />
+            <h2 className="auth-form-title">Request reset</h2>
+            <p className="auth-form-subtitle">Enter your email to receive a reset link</p>
           </div>
           <label className="field">
             <span>Email</span>
@@ -24,8 +24,8 @@ export function ResetPasswordPage() {
 
         <section className="auth-form-shell">
           <div className="auth-form-head">
-            <Skeleton className="line line-lg" />
-            <Skeleton className="line" />
+            <h2 className="auth-form-title">Set new password</h2>
+            <p className="auth-form-subtitle">Enter your reset token and new password</p>
           </div>
           <label className="field">
             <span>Token</span>

@@ -12,8 +12,8 @@ export function LoginPage() {
     >
       <div className="auth-form-shell" aria-hidden="true">
         <div className="auth-form-head">
-          <Skeleton className="line line-lg" />
-          <Skeleton className="line" />
+          <h2 className="auth-form-title">Welcome back</h2>
+          <p className="auth-form-subtitle">Enter your credentials to continue</p>
         </div>
         {authFields.map((field) => (
           <label key={field.label} className="field">
