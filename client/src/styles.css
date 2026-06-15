@@ -283,8 +283,26 @@ img {
   color: var(--color-primary-hover);
 }
 
+.shell-nav-link-content {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+}
+
+.shell-nav-link-content svg {
+  flex-shrink: 0;
+  opacity: 0.6;
+  transition: opacity var(--transition-fast);
+}
+
+.shell-nav-link:hover .shell-nav-link-content svg,
+.shell-nav-link.is-active .shell-nav-link-content svg {
+  opacity: 1;
+}
+
 .shell-nav-link-arrow {
-  font-size: var(--text-sm);
+  display: flex;
+  align-items: center;
   line-height: 1;
   opacity: 0;
   transform: translateX(-4px);
