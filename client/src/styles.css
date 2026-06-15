@@ -1102,6 +1102,17 @@ img {
    RESPONSIVE BREAKPOINTS
    ============================================================ */
 
+/* Large desktop */
+@media (min-width: 1440px) {
+  .app-main {
+    padding: var(--space-12) var(--space-16);
+  }
+
+  .page-stack {
+    max-width: 1280px;
+  }
+}
+
 /* Tablet & below */
 @media (max-width: 1100px) {
   .app-shell,
@@ -1119,8 +1130,25 @@ img {
     border-bottom: 1px solid var(--color-border);
   }
 
+  .shell-nav {
+    display: flex;
+    gap: var(--space-2);
+  }
+
+  .sidebar-copy {
+    display: none;
+  }
+
+  .sidebar-footer {
+    display: none;
+  }
+
   .auth-hero {
     min-height: 0;
+  }
+
+  .auth-shell {
+    gap: var(--space-6);
   }
 }
 
@@ -1135,14 +1163,22 @@ img {
   }
 
   .page-hero,
-  .listing-card-head,
-  .listing-card-foot,
-  .queue-row,
   .section-header,
   .profile-banner,
   .danger-note {
     align-items: flex-start;
     flex-direction: column;
+  }
+
+  .listing-card-head,
+  .listing-card-foot {
+    flex-wrap: wrap;
+  }
+
+  .queue-row {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--space-3);
   }
 
   .auth-highlights,
@@ -1154,6 +1190,7 @@ img {
   .page-hero h2,
   .auth-hero h1 {
     max-width: none;
+    font-size: var(--text-2xl);
   }
 
   .auth-shell {
@@ -1162,7 +1199,111 @@ img {
 
   .auth-card {
     padding: var(--space-5);
+    box-shadow: var(--shadow-sm);
   }
+
+  .metric-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .listing-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .page-stack {
+    gap: var(--space-4);
+  }
+
+  .brand-block h1 {
+    font-size: var(--text-base);
+  }
+
+  .reset-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Small mobile */
+@media (max-width: 480px) {
+  .metric-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .auth-hero h1 {
+    font-size: var(--text-xl);
+  }
+}
+
+/* ============================================================
+   FOCUS & ACCESSIBILITY
+   ============================================================ */
+:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 2px;
+  border-radius: var(--radius-xs);
+}
+
+.shell-nav-link:focus-visible {
+  outline-offset: -2px;
+}
+
+.text-link:focus-visible {
+  outline-offset: 3px;
+}
+
+/* ============================================================
+   INTERACTIVE ENHANCEMENTS
+   ============================================================ */
+
+/* Card hover lift — only on non-touch devices */
+@media (hover: hover) {
+  .metric-card:hover,
+  .listing-card:hover {
+    box-shadow: var(--shadow-md);
+    transform: translateY(-2px);
+  }
+
+  .queue-row:hover {
+    background: var(--color-bg);
+    box-shadow: var(--shadow-xs);
+  }
+
+  .mini-surface:hover {
+    box-shadow: var(--shadow-sm);
+  }
+}
+
+/* Remove hover effects on touch */
+@media (hover: none) {
+  .metric-card,
+  .listing-card {
+    transition: none;
+  }
+}
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Custom scrollbar for sidebar */
+.app-sidebar::-webkit-scrollbar {
+  width: 4px;
+}
+
+.app-sidebar::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.app-sidebar::-webkit-scrollbar-thumb {
+  background: var(--color-bg-muted);
+  border-radius: var(--radius-full);
+}
+
+/* Selection color */
+::selection {
+  background: var(--color-primary-soft);
+  color: var(--color-primary-hover);
 }
 
 /* ----- Reduced Motion ----- */
@@ -1174,4 +1315,9 @@ img {
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
   }
+
+  html {
+    scroll-behavior: auto;
+  }
 }
+

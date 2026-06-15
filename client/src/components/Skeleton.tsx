@@ -6,5 +6,11 @@ type SkeletonProps = HTMLAttributes<HTMLDivElement> & {
 };
 
 export function Skeleton({ className, tone = 'default', ...props }: SkeletonProps) {
-  return <div className={cx('skeleton', tone === 'soft' && 'skeleton-soft', className)} {...props} />;
+  return (
+    <div
+      className={cx('skeleton', tone === 'soft' && 'skeleton-soft', className)}
+      role="presentation"
+      {...props}
+    />
+  );
 }
