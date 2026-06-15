@@ -11,6 +11,12 @@ function FormRow({ label, helper }: { label: string; helper?: string }) {
   );
 }
 
+const stageVariantMap: Record<string, string> = {
+  'Needs photos': 'meta-chip-warning',
+  'Awaiting price': 'meta-chip-info',
+  'Ready for publish': 'meta-chip-success',
+};
+
 export function AdminPage() {
   return (
     <div className="page-stack">
@@ -50,7 +56,9 @@ export function AdminPage() {
               <Skeleton className="toggle-skeleton" />
               <Skeleton className="line line-sm" />
             </div>
-            <Skeleton className="button-skeleton button-skeleton-wide" />
+            <div className="form-actions">
+              <Skeleton className="button-skeleton button-skeleton-wide" />
+            </div>
           </div>
         </section>
 
@@ -60,17 +68,18 @@ export function AdminPage() {
               <p className="eyebrow">Queue</p>
               <h3>Approval list</h3>
             </div>
+            <span className="queue-count">{queueRows.length} items</span>
           </div>
 
           <div className="table-stack">
             {queueRows.map((row) => (
               <article key={row.title} className="queue-row">
-                <div>
+                <div className="queue-row-info">
                   <strong>{row.title}</strong>
                   <span>{row.owner}</span>
                 </div>
-                <div>
-                  <span className="meta-chip">{row.stage}</span>
+                <div className="queue-row-meta">
+                  <span className={`meta-chip ${stageVariantMap[row.stage] || ''}`}>{row.stage}</span>
                   <small>{row.time}</small>
                 </div>
               </article>
