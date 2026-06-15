@@ -534,8 +534,46 @@ img {
 
 .listing-card {
   display: grid;
+  gap: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+.listing-image-placeholder {
+  display: grid;
+  place-items: center;
+  height: 140px;
+  background: var(--color-bg);
+  border-bottom: 1px solid var(--color-border-light);
+}
+
+.listing-image-skeleton {
+  height: 140px;
+  border-radius: 0;
+}
+
+.listing-card-body {
+  display: grid;
   gap: var(--space-3);
   padding: var(--space-5);
+}
+
+.status-chip-live {
+  border-color: var(--color-success-soft);
+  background: var(--color-success-soft);
+  color: #065F46;
+}
+
+.status-chip-queued {
+  border-color: var(--color-warning-soft);
+  background: var(--color-warning-soft);
+  color: #92400E;
+}
+
+.status-chip-draft {
+  border-color: var(--color-border);
+  background: var(--color-bg-soft);
+  color: var(--color-text-secondary);
 }
 
 .listing-card h4 {
