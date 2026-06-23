@@ -1,7 +1,7 @@
 import type { ReactNode } from 'react';
 import { NavLink, Outlet } from 'react-router-dom';
 import { marketNav } from '../data';
-import { cx } from '../lib/cx';
+import { cx } from '../utils/cx';
 import type { NavItem } from '../types';
 
 type AppShellProps = {
