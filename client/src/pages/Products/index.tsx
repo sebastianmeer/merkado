@@ -1,36 +1,7 @@
-import { marketplaceMetrics, listingCards } from '../data';
-import { Skeleton } from '../components/Skeleton';
-
-function MetricSkeleton() {
-  return (
-    <article className="metric-card metric-card-skeleton">
-      <Skeleton className="line line-sm" />
-      <Skeleton className="line line-xl" />
-      <Skeleton className="line" />
-    </article>
-  );
-}
-
-function ListingSkeleton({ index }: { index: number }) {
-  return (
-    <article className="listing-card listing-card-skeleton">
-      <Skeleton className="listing-image-skeleton" />
-      <div className="listing-card-body">
-        <div className="listing-card-head">
-          <Skeleton className="pill" />
-          <Skeleton className="pill pill-wide" />
-        </div>
-        <Skeleton className="line line-lg" />
-        <Skeleton className="line" />
-        <Skeleton className="line line-short" />
-        <div className="listing-card-foot">
-          <Skeleton className="pill pill-xl" />
-          <Skeleton className="button-skeleton button-skeleton-small" aria-label={`loading action ${index + 1}`} />
-        </div>
-      </div>
-    </article>
-  );
-}
+import { marketplaceMetrics, listingCards } from '../../data';
+import { Skeleton } from '../../components/Skeleton';
+import { MetricSkeleton } from './components/MetricSkeleton';
+import { ListingSkeleton } from './components/ListingSkeleton';
 
 const statusToneMap: Record<string, string> = {
   Live: 'status-chip-live',

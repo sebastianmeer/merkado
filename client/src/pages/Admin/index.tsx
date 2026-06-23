@@ -1,15 +1,6 @@
-import { queueRows } from '../data';
-import { Skeleton } from '../components/Skeleton';
-
-function FormRow({ label, helper }: { label: string; helper?: string }) {
-  return (
-    <label className="field">
-      <span>{label}</span>
-      {helper ? <small>{helper}</small> : null}
-      <Skeleton className="input-skeleton" />
-    </label>
-  );
-}
+import { queueRows } from '../../data';
+import { Skeleton } from '../../components/Skeleton';
+import { FormRow } from './components/FormRow';
 
 const stageVariantMap: Record<string, string> = {
   'Needs photos': 'meta-chip-warning',

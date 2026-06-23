@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
-import { AuthShell } from '../components/AuthShell';
-import { Skeleton } from '../components/Skeleton';
+import { AuthShell } from '../../components/AuthShell';
+import { Skeleton } from '../../components/Skeleton';
 
 export function ResetPasswordPage() {
   return (

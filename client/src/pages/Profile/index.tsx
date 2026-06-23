@@ -1,13 +1,5 @@
-import { Skeleton } from '../components/Skeleton';
-
-function ProfileField({ label }: { label: string }) {
-  return (
-    <label className="field">
-      <span>{label}</span>
-      <Skeleton className="input-skeleton" />
-    </label>
-  );
-}
+import { Skeleton } from '../../components/Skeleton';
+import { ProfileField } from './components/ProfileField';
 
 export function ProfilePage() {
   return (
