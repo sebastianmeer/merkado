@@ -1,12 +1,12 @@
 import { Navigate, Route, Routes } from 'react-router-dom';
 import { AppShell } from './components/AppShell';
 import { marketNav } from './data';
-import { AdminPage } from './pages/AdminPage';
-import { LoginPage } from './pages/LoginPage';
-import { ProfilePage } from './pages/ProfilePage';
-import { ProductsPage } from './pages/ProductsPage';
-import { ResetPasswordPage } from './pages/ResetPasswordPage';
-import { SignupPage } from './pages/SignupPage';
+import { AdminPage } from './pages/Admin';
+import { LoginPage } from './pages/Login';
+import { ProfilePage } from './pages/Profile';
+import { ProductsPage } from './pages/Products';
+import { ResetPasswordPage } from './pages/ResetPassword';
+import { SignupPage } from './pages/Signup';
 
 export default function App() {
   return (
